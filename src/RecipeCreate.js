@@ -19,7 +19,7 @@ function RecipeCreate({createRecipe}) {
     const value = target.value;
     setFormData({ 
     ...formData,
-    [target.name]: value, 
+    [target.name]: target.value, 
   });
 };
   
@@ -29,7 +29,7 @@ function RecipeCreate({createRecipe}) {
     createRecipe(formData); 
     // Pushes recipe to recipe data
     // Gets recipe from RecipeData and adds into RecipeList
-    setFormData({ ...initialFormState }); 
+    setFormData(initialFormState); 
   }; 
   
   // Manages the webpage form structure 
@@ -44,6 +44,7 @@ function RecipeCreate({createRecipe}) {
               id="name"
               type="text"
               name="name"
+              required={true}
               placeholder="Name"
               onChange={handleChange}
               value={formData.name}
@@ -56,6 +57,7 @@ function RecipeCreate({createRecipe}) {
                   id="cuisine"
                   type="text"
                   name="cuisine"
+                  required={true}
                   placeholder="Cuisine"
                   onChange={handleChange}
                   value={formData.cuisine}
@@ -68,6 +70,7 @@ function RecipeCreate({createRecipe}) {
                   id="photo"
                   type="url"
                   name="photo"
+                  required={true}
                   placeholder="URL"
                   onChange={handleChange}
                   value={formData.photo}
@@ -80,6 +83,7 @@ function RecipeCreate({createRecipe}) {
                   id="ingredients"
                   type="text"
                   name="ingredients"
+                  required={true}
                   placeholder="Ingredients"
                   onChange={handleChange}
                   value={formData.ingredients}
@@ -92,6 +96,7 @@ function RecipeCreate({createRecipe}) {
                   id="preparation"
                   type="text"
                   name="preparation"
+                  required={true}
                   placeholder="Preparation"
                   onChange={handleChange}
                   value={formData.preparation}
